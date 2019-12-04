@@ -45,7 +45,8 @@ extensions = [
     'matplotlib.sphinxext.plot_directive',
     'm2r',
     'nbsphinx',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
+    'sphinxcontrib.versioning.sphinx_'
 ]
 
 # autodoc options
