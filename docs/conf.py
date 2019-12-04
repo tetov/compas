@@ -36,7 +36,7 @@ language         = None
 # -- Extension configuration ------------------------------------------------
 
 extensions = [
-    'sphinx.ext.autodoc',
+    # 'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
@@ -48,7 +48,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.versioning.sphinx_'
 ]
-
+'''
 # autodoc options
 
 autodoc_default_flags = [
@@ -59,7 +59,7 @@ autodoc_default_flags = [
 autodoc_member_order = 'alphabetical'
 
 autoclass_content = "class"
-
+'''
 # autosummary options
 
 autosummary_generate = True
@@ -228,3 +228,6 @@ html_show_sourcelink = False
 html_add_permalinks = ''
 html_experimental_html5_writer = True
 html_compact_lists = True
+
+# -- Options for HTML output ----------------------------------------------
+scv_whitelist_tags= (re.compile(r'\d'),)

@@ -22,7 +22,7 @@ deploy:
   skip_cleanup: true
   keep-history: true
   github_token: $GITHUB_TOKEN
-  repo: compas-dev/main
+  repo: tetov/main
   name: COMPAS doc bot
   target-branch: master
   local_dir: dist/docs

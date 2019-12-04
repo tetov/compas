@@ -120,6 +120,26 @@ def docs(ctx, doctest=False, rebuild=True, check_links=False):
         if check_links:
             ctx.run('sphinx-build -E -b linkcheck docs dist/docs')
 
+@task(help={
+      'rebuild': 'True to clean all previously built docs before starting, otherwise False.',
+      'doctest': 'True to run doctests, otherwise False.',
+      'check_links': 'True to check all web links in docs for validity, otherwise False.'})
+def versioned_docs(ctx, doctest=False, rebuild=True, check_links=False):
+    """Builds package's HTML documentation."""
+
+    if rebuild:
+        clean(ctx)
+
+    with chdir(BASE_FOLDER):
+        if doctest:
+            ctx.run('sphinx-build -E -b doctest docs dist/docs')
+
+        ctx.run('sphinx-versioning build -W 1 -W 2 docs dist/docs -- -E -b html')
+
+        if check_links:
+            ctx.run('sphinx-build -E -b linkcheck docs dist/docs')
+
+
 
 @task()
 def check(ctx):
